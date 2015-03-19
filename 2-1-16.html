@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="/js/angular-1.3.4.js"></script>
+</head>
+
+<body>
+<p>simple</p>
+<ul ng-init="authors=['hoge', 'moge', 'fuga']">
+  <li ng-repeat="author in authors">{{author}}</li>
+</ul>  
+<hr />
+
+<p>hash</p>
+<ul ng-init="authorData={id: 1, name: '太郎', bloodType: 'A'}">
+  <li ng-repeat="(key, val) in authorData">{{key}} - {{val}}</li>
+</ul>
+<hr />
+
+<p>hash2</p>
+<ul ng-init="authors=[
+  {id: 1, name: '太郎', bloodType: 'A'},
+  {id: 2, name: '次郎', bloodType: 'O'}
+]">
+  <li ng-repeat="author in authors">{{author.id}} / {{author.name}} / {{author.bloodType}}</li>
+</ul>
+<hr />
+
+<p>index</p>
+<style>
+.evenRow = { color: #999 };
+.odd = { color: #111 };
+</style>
+<table ng-init="week=['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']" border="1">
+<thead>
+  <tr><th>day</th><th>$index</th><th>$first</th><th>$middle</th><th>$last</th><th>$even</th><th>$odd</th></tr>
+<thead>
+<tbody>
+  <tr ng-repeat="day in week" ng-class="{evenRow: $even, oddRow: $odd}">
+    <td>{{ day }}</td>
+    <td>{{ $index }}</td>
+    <td>{{ $first }}</td>
+    <td>{{ $middle }}</td>
+    <td>{{ $last }}</td>
+    <td>{{ $even ? '○' : '×' }}</td>
+    <td>{{ $odd ? '○' : '×'}}</td>
+  </tr>
+</tbody>
+</table>
+<hr />
+<p>
+<span ng-repeat-start="day in week">index: {{$index}}</span>
+<span>day: {{day}}</span>
+<span ng-repeat-end><br /></span>
+</p>
+</body>
+
+</html>

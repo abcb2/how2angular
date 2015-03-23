@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="/js/angular-1.3.4.js"></script>
+</head>
+<body>
+
+<form name="demoForm" ng-init="list=['foo', 'bar', 'baz']">
+<div ng-repeat="item in list" ng-form>
+  <input type="text" ng-value="item">
+  <input type="submit" value="更新">
+</div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="/js/angular-1.3.4.js"></script>
+</head>
+<body>
+<input type="text" ng-model="normalModel">
+{{ normalModel }}: 文字の長さ {{ normalModel.length }}
+
+<br />
+<input type="text" ng-model="trimModel" ng-trim="false">
+{{ trimModel }}: 文字の長さ {{ trimModel.length }}
+
+
+</body>
+</html>

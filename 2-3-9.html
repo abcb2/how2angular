@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="/js/angular-1.3.4.js"></script>
+</head>
+<body>
+
+<div ng-init="
+  strValue='文字列';
+  arrayValue=['A', 'B', 'C'];
+  hashValue={data: 'hash'};
+"></div>
+<input type="radio" ng-model="ngValue" value="true">value<br />
+<input type="radio" ng-model="ngValue" value="strValue">ng-value="strValue"<br />
+<input type="radio" ng-model="ngValue" value="arrayValue">ng-value="arrayValue"<br />
+<input type="radio" ng-model="ngValue" value="hashValue">ng-value="hashValue"<br />
+{{ngValue}}
+<hr />
+{{arrayValue}}
+{{hashValue}}
+
+</body>
+</html>
